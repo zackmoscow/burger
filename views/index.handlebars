@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron bg-primary text-white">
   <h1 class="display-4 text-center">Eat Da Burger</h1>
   <h4 class="text-center">An app that tracks your favorite burgers and whether you've had the opportunity to DEVOUR them.</h4>
 </div>
@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 text-center pt-2 mb-4">
       <h3>Add a Burger!</h3>
       <hr class="my-4">
       <form class="create-burger">
@@ -16,11 +16,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Add Burger</button>
       </form>
-      <br>
-      <br>
     </div>
 
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 text-center bg-light pt-2 mb-4">
       <h3>Need to eat!</h3>
       <hr class="my-4">
       {{#each burgers}}
@@ -28,11 +26,9 @@
           {{> burgers/burger-block devoured=true}}
         {{/unless}}
       {{/each}}
-      <br>
-      <br>
     </div> 
 
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 text-center pt-2 mb-4">
       <h3>Already eaten!</h3>
       <hr class="my-4">
       {{#each burgers}}
@@ -40,8 +36,6 @@
           {{> burgers/burger-block devoured=false}}
         {{/if}}
       {{/each}}
-      <br>
-      <br>
     </div>
     
   </div>
