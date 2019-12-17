@@ -7,8 +7,8 @@ const burger = {
       });
     },
     
-    insert: function(value, cb) {
-      orm.insert(value, function(res) {
+    create: function(data, cb) {
+      orm.insert(data, function(res) {
         cb(res);
       });
     },

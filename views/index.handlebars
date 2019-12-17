@@ -1,0 +1,45 @@
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Eat Da Burger!</h1>
+  <h4 class="text-center">An app that helps you track your favorite burgers and whether you've had the opportunity to DEVOUR them.</h4>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <h3>Burgers to be DEVOURED!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+      {{/each}}
+    </div> 
+    <div class="col-md-6 text-center">
+      <h3>Burgers you have DEVOURED!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+        {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h3>Add a Burger!</h3>
+      <hr class="my-4">
+      <form class="create-burger">
+        <div class="form-group">
+          <label for="burger">Burger Name:</label>
+          <input type="text" id="burger" name="name">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Burger</button>
+      </form>
+    </div>
+  </div>  
+</div>
