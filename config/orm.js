@@ -23,9 +23,8 @@ const orm = {
       });
     },
 
-    insert: function(data, cb) {
-      const queryString = `INSERT INTO burgers (burger_name) VALUES (${data})`;
-      console.log(queryString);
+    insert: function(name, cb) {
+      const queryString = `INSERT INTO burgers (burger_name) VALUES ("${name}")`;
       connection.query(queryString, function(err, result) {
         if (err) throw err;
         cb(result);
@@ -34,7 +33,6 @@ const orm = {
     
     update: function(devoured, condition, cb) {
       const sqlDevoured = objToSql(devoured);
-      console.log(sqlDevoured);
       const queryString = `UPDATE burgers SET ${sqlDevoured} WHERE ${condition}`
       connection.query(queryString, function(err, result) {
         if (err) throw err;

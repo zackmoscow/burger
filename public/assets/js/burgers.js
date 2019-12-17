@@ -23,12 +23,12 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        burger_name: $("#burger").val().trim(),
+        name: $("#burger").val().trim(),
       };
 
       $.ajax("/api/burgers", {
         type: "POST",
-        data: newBurger
+        data: newBurger,
       }).then(
         function() {
           location.reload();

@@ -1,36 +1,12 @@
 <div class="jumbotron">
-  <h1 class="display-4 text-center">Eat Da Burger!</h1>
-  <h4 class="text-center">An app that helps you track your favorite burgers and whether you've had the opportunity to DEVOUR them.</h4>
+  <h1 class="display-4 text-center">Eat Da Burger</h1>
+  <h4 class="text-center">An app that tracks your favorite burgers and whether you've had the opportunity to DEVOUR them.</h4>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 text-center">
-      <h3>Burgers to be DEVOURED!</h3>
-      <hr class="my-4">
-      {{#each burgers}}
-        {{#unless devoured}}
-          {{> burgers/burger-block devoured=true}}
-        {{/unless}}
-      {{/each}}
-    </div> 
-    <div class="col-md-6 text-center">
-      <h3>Burgers you have DEVOURED!</h3>
-      <hr class="my-4">
-      {{#each burgers}}
-        {{#if devoured}}
-          {{> burgers/burger-block devoured=false}}
-        {{/if}}
-      {{/each}}
-    </div>
-  </div>
-</div>
 
-<br>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6 text-center">
+    <div class="col-md-4 text-center">
       <h3>Add a Burger!</h3>
       <hr class="my-4">
       <form class="create-burger">
@@ -40,6 +16,33 @@
         </div>
         <button type="submit" class="btn btn-primary">Add Burger</button>
       </form>
+      <br>
+      <br>
     </div>
-  </div>  
+
+    <div class="col-md-4 text-center">
+      <h3>Need to eat!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+      {{/each}}
+      <br>
+      <br>
+    </div> 
+
+    <div class="col-md-4 text-center">
+      <h3>Already eaten!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+        {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+        {{/if}}
+      {{/each}}
+      <br>
+      <br>
+    </div>
+    
+  </div>
 </div>
